@@ -1,1 +1,2 @@
 uno script di colab nel quale esegue meshroom per la ricostruzione fotogrammetrica
+creata la versione 1.2 che salva direttamene su google drive. creare nel proprio drive di google due folder /input e /output, dove nella /input dovranno essere uplodate le foto per la ricostruzione fotogrammetrica e nella folder /output si troverà il file 3d obj finale ottenuto con la recostruction
