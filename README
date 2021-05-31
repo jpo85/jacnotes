@@ -3,3 +3,5 @@ creata la versione 1.2 che salva direttamente su google drive.
 
 Per la ver 1.2 effettuare prima questi prerequisiti:
 creare nel proprio drive di google due folder /input e /output, dove nella folder /input dovranno essere uplodate le foto per la ricostruzione fotogrammetrica e nella folder /output si troverà il file 3d obj finale ottenuto con la recostruction
+
+La versione 1.4 integra anche la parte di descrizione stebystep per l'esecuzione dello script completo.
