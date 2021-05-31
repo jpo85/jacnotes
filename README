@@ -6,3 +6,4 @@ creare nel proprio drive di google due folder /input e /output, dove nella folde
 
 La versione 1.4 è stata rinominata in runtime_script ed integra anche la parte di descrizione stebystep per l'esecuzione dello script completo.
 La versione 1.5 corregge il testo per migliorare la comprensione ed aggiunge la riga di codice meshroom_compute per eseguire un workflow .mg custom
+La versione 1.6 aggiunge il modulo trimesh per la preview della mesh
