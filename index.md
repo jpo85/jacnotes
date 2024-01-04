@@ -15,6 +15,7 @@ procedi al seguente link [runtime_script.ipynb](https://colab.research.google.co
 #### questo è un paragrafo
 
 > questo è un elemento che non mi ricordo cosa rappresenti
+> 
 > questo è un altro elemento uguale a quello sopra
 
 **questo dovrebbe essere un altro elemmento**
