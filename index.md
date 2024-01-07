@@ -1,2 +1,2 @@
-## Il blog di Jacopo Pica
+### {Il blog di Jacopo Pica}
 ##### raccolgo qui tutto ciò che mi passa per la mente, appunti di tecnologia, progetti di information technology e tutto il codice che utilizzo nel mio lavoro...  
