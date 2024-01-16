@@ -22,10 +22,17 @@
    font-family: 'Cascadia Code', sans-serif;
    font-size: 15px;
   }
-  p {
+  .p1 {
    color: black;
    font-family: 'Cascadia Code', sans-serif;
-   font-size: 18px;
+  }
+  .p2 {
+   color: black;
+   font-family: 'Cascadia Code', sans-serif;
+  }
+  .p3 {
+   color: black;
+   font-family: 'Cascadia Code', sans-serif;
   }
   a:link {
    color: black;
