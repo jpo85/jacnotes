@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jacnotes_/articoli/articles_001</title>
+<link rel="icon" type="image/x-icon" href="../images/terminal.ico">
+ <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+ <table style="width:100%">
+  <tr>
+   <td>
+    <img src="../images/coding.png">
+   </td>
+   <td style="width:80%">
+    <h1>articoli_</h1>
+   </td>
+   <td>
+    <h3>
+     <a href="../index.html">home</a>
+    </h3>
+   </td>
+   <td>
+    <h3>
+     <a href="../articoli.html">articoli</a>
+    </h3>
+   </td>
+   <td>
+    <h3>
+     <a href="../progetti.html">progetti</a>
+    </h3>
+   </td>
+   <td>
+    <h3>
+     <a href="../chisono.html">chi_sono</a>
+    </h3>
+   </td>
+  </tr>
+ </table>
+
+ <div class="article">  
+  <div class="article">
+      <h2>Titolo Articolo</h2>
+      <h4>Descrizione articolo, Gen 1, 2024</h4>
+      <!--
+        <div class="img" style="height:200px;">Image</div>
+      -->
+      <p class="p3">paragrafo</p>
+      <p class="p3">paragrafo
+        testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestottestotestotestotesto
+        testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotesto
+        testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotesto</p>
+    </div>
+  </div> 
+  <footer>
+  <table align = "center">
+   <tr>
+    <td>
+        <a href="https://it.linkedin.com/in/jacopo-pica">
+            <img src="../images/linkedin_logo.png"></a>
+    </td>
+    <td>
+        <a href="https://twitter.com/d0ntc0s">
+            <img src="../images/twitter_logo.png"></a>
+    </td> 
+    <td>
+        <a href="https://www.instagram.com/jacopo_cornelis_escher/">
+            <img src="../images/instagram_logo.png"></a>
+    </td>
+   </tr>
+  </table>
+  
+   <p class="p1">esprimi la tua opinione sul contenuto:</p>
+   <form class="p1">
+    <input type="radio" id="molto_utile" name="sondaggio" value="molto_utile">
+    <label for="molto_utile">molto utile</label>
+    <input type="radio" id="nella_media" name="sondaggio" value="nella_media">
+    <label for="nella_media">nella media</label>
+    <input type="radio" id="niente_utile" name="sondaggio" value="niente_utile">
+    <label for="niente_utile">per niente utile, non sono d'accordo con il contenuto</label>
+    <input type="submit" value="Submit">
+   </form>
+ 
+
+ </footer>
+
+</body>
+</html>
