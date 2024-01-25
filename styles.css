@@ -39,6 +39,11 @@
     padding: 20px;
     margin-top: 20px;
   }
+    .widget {
+    background-color: transparent;
+    padding: 5px;
+    margin-top: 5px;
+  }
   .img {
     background-color: transparent;
     width: 100%;
