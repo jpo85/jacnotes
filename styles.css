@@ -39,6 +39,12 @@
     padding: 20px;
     margin-top: 20px;
   }
+  .article-text {
+    background-color: transparent;
+    padding: 20px;
+    margin-top: 20px;
+    width: 1500px;
+  }
   .img {
     background-color: transparent;
     width: 100%;
