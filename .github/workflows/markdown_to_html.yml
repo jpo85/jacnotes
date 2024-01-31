@@ -28,5 +28,5 @@ jobs:
       - name: Markdown in HTML con GitHub Style
         uses: natescherer/markdown-to-html-with-github-style-action@v1.1.0
         with:
-          path: 'markdown/.'
+          path: '.'
           outputpath: articles
