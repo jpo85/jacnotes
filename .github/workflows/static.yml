@@ -38,11 +38,6 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-      - name: Markdown in HTML con GitHub Style
-        uses: natescherer/markdown-to-html-with-github-style-action@v1.1.0
-        with:
-          path: 'markdown/.'
-          outputpath: articles
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
