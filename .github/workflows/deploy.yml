@@ -23,15 +23,15 @@ jobs:
 
     - name: Convert Markdown to HTML
       run: |
-        mkdir output
-        python -c "
+        mkdir -p ../articles
+        python - <<'EOF'
 
 import os
 import markdown
 
 # Percorso alla cartella con i file markdown
-input_dir = './markdown'
-output_dir = './articles'
+input_dir = '../markdown'
+output_dir = '../articles'
 
 # Crea la directory di output se non esiste
 os.makedirs(output_dir, exist_ok=True)
@@ -50,11 +50,11 @@ for root, dirs, files in os.walk(input_dir):
             # Scrivi l'output in un file HTML
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(html)
-        "
+EOF
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./articles
+        publish_dir: ../articles
 
