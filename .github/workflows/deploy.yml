@@ -23,7 +23,6 @@ jobs:
 
     - name: Convert Markdown to HTML
       run: |
-        mkdir -p ../articles
         python .github/workflows/convert_md_to_html.py
 
     - name: Deploy to GitHub Pages
