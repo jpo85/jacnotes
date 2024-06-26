@@ -4,8 +4,8 @@ import os
 import markdown
 
 # Percorso alla cartella con i file markdown
-input_dir = './markdown'
-output_dir = './articles'
+input_dir = '.'
+output_dir = 'output'
 
 # Crea la directory di output se non esiste
 os.makedirs(output_dir, exist_ok=True)
