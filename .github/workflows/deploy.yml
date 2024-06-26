@@ -23,7 +23,7 @@ jobs:
 
     - name: Convert Markdown to HTML
       run: |
-        python .github/workflows/convert_md_to_html.py
+        python convert_md_to_html.py
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
