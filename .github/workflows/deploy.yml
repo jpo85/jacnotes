@@ -23,9 +23,8 @@ jobs:
 
     - name: Convert Markdown to HTML
       run: |
-        mkdir -p ../articles
+        mkdir -p output
         python - <<'EOF'
-
 import os
 import markdown
 
@@ -57,4 +56,3 @@ EOF
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ../articles
-
