@@ -38,6 +38,20 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install markdown
+      - name: List Markdown files
+        run: find . -name '*.md'
+      - name: Convert Markdown to HTML
+        run: |
+          mkdir -p ./articles
+          python convert_md_to_html.py
+      - name: List output directory
+        run: ls -la articles
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
