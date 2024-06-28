@@ -49,7 +49,7 @@ jobs:
           python convert_md_to_html.py
 
       - name: List output directory
-        run: ls -la output
+        run: ls -la articles
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
