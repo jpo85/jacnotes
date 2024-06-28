@@ -46,6 +46,10 @@ jobs:
             pandoc "$file" -o "articles/$(basename "${file%.md}.html")"
           done
 
+      # Verifica che i file HTML siano stati creati
+      - name: Verify HTML Files
+        run: ls -la articles
+        
       # Configura GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
