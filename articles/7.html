@@ -51,7 +51,7 @@
         Devono avere l'UAC disabilitato (aggiungere le macchine prima nella GPO relativa)
         Devono essere raggiungibili via CIFS sulla porta 445 (se usate una wks del gasip dovreste raggiungere tutto
         senza aprire regole firewall)</p>
-      <p>Nel file allegato è presente una folder <em>sep_sylink_script</em> che contiene tutti i sorgenti per la
+      <p class="p3">Nel file allegato è presente una folder <em>sep_sylink_script</em> che contiene tutti i sorgenti per la
         eseguire la migrazione:</p>
       <ul>
         <li>sylink.bat che serve per lanciare l'eseguibile</li>
@@ -61,18 +61,18 @@
         <li>host_to_migrate.txt è la lista delle macchine a cui applicare la modifica.</li>
       </ul>
       <blockquote>
-        <p>Va aggiunta una macchina per riga
+        <p class="p3">Va aggiunta una macchina per riga
           la folder deve essere copiata in un path della workstation locale del gasip, e che sia raggiungibile poi
           quando eseguite lo script.</p>
       </blockquote>
-      <p><strong>Di seguito lo script descritto:</strong></p>
+      <p class="p3"><strong>Di seguito lo script descritto:</strong></p>
       <p>Importa le credenziali da un file xml crittografato</p>
       <pre><code class="language-powershell"><span class="hljs-variable">$credential</span> = <span class="hljs-built_in">Import-CliXml</span> <span class="hljs-literal">-Path</span> <span class="hljs-string">&quot;E:\script\cred_symantec_ad.xml&quot;</span>
 </code></pre>
-      <p>file txt dove inserire i nomi macchina dei client da migrare</p>
+      <p class="p3">file txt dove inserire i nomi macchina dei client da migrare</p>
       <pre><code class="language-powershell"><span class="hljs-variable">$files</span> = <span class="hljs-built_in">Get-Content</span> <span class="hljs-literal">-Path</span> .\host_to_migrate.txt
 </code></pre>
-      <p>il ciclo foreach che prende ogni macchina dentro il file txt ed esegue una per volta le istruzioni all'interno
+      <p class="p3">il ciclo foreach che prende ogni macchina dentro il file txt ed esegue una per volta le istruzioni all'interno
         del ciclo</p>
       <pre><code class="language-powershell"><span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$host_item</span> <span class="hljs-keyword">in</span> <span class="hljs-variable">$files</span>)
 {
@@ -87,11 +87,11 @@
 <span class="hljs-built_in">Remove-PSdrive</span> <span class="hljs-literal">-Name</span> B
 }
 </code></pre>
-      <p>fine dello script, premere invio per uscire</p>
+      <p class="p3">fine dello script, premere invio per uscire</p>
       <pre><code class="language-powershell"><span class="hljs-built_in">Read-Host</span> <span class="hljs-literal">-Prompt</span> <span class="hljs-string">&quot;Premere Invio per uscire&quot;</span>
 </code></pre>
-      <p><em>ver. 1.0</em></p>
-      <p><em>Powered by @jacopo.pica</em></p>
+      <p class="p3"><em>ver. 1.0</em></p>
+      <p class="p3"><em>Powered by @jacopo.pica</em></p>
 
       <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
     </div>
