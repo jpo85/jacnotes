@@ -1,90 +1,120 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>jacnotes_/articoli/articles_007</title>
-<link rel="icon" type="image/x-icon" href="../images/terminal.ico">
- <link rel="stylesheet" href="../styles1.css">
-</head>
-<body>
- <table style="width:100%">
-  <tr>
-   <td>
-    <img src="../images/coding.png">
-   </td>
-   <td style="width:80%">
-    <h1>articoli_</h1>
-   </td>
-   <td>
-    <h3>
-     <a href="../index.html">home</a>
-    </h3>
-   </td>
-   <td>
-    <h3>
-     <a href="../articoli.html">articoli</a>
-    </h3>
-   </td>
-   <td>
-    <h3>
-     <a href="../progetti.html">progetti</a>
-    </h3>
-   </td>
-   <td>
-    <h3>
-     <a href="../chisono.html">chi_sono</a>
-    </h3>
-   </td>
-  </tr>
- </table>
 
- <div class="article">  
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jacnotes_/articoli/articles_007</title>
+  <link rel="icon" type="image/x-icon" href="../images/terminal.ico">
+  <link rel="stylesheet" href="../styles1.css">
+</head>
+
+<body>
+  <table style="width:100%">
+    <tr>
+      <td>
+        <img src="../images/coding.png">
+      </td>
+      <td style="width:80%">
+        <h1>articoli_</h1>
+      </td>
+      <td>
+        <h3>
+          <a href="../index.html">home</a>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          <a href="../articoli.html">articoli</a>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          <a href="../progetti.html">progetti</a>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          <a href="../chisono.html">chi_sono</a>
+        </h3>
+      </td>
+    </tr>
+  </table>
+
   <div class="article">
-      <h2>Titolo Articolo</h2>
-      <h4>Descrizione articolo, Gen 1, 2024</h4>
-      <!--
-        <div class="img" style="height:200px;">Image</div>
-      -->
-      <p class="p3">paragrafo</p>
-      <p class="p3">paragrafo
-        testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestottestotestotestotesto
-        testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotesto
-        testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotesto
-      </p>
-      <p class="p3">il ciclo foreach che prende ogni macchina dentro il file txt ed esegue una per volta le istruzioni all'interno del ciclo</p>
+    <div class="article">
+      <h2>Script per la migrazione client symantec</h2>
+      <h4>Questo script in powershell effettua la migrazione da una console ad un'altra dei client</h4>
+      <p class="p3">Per funzionare lo script deve essere eseguito su una delle wks del gasip per evitare limitazioni di
+        regole firewall.
+        Le macchine a cui applicare la modifica devono avere il servizio winrm attimo raggiungibile sulla porta 5985 (di
+        default da 2008 r2 in poi dovrebbe già esserlo)
+        Devono avere l'UAC disabilitato (aggiungere le macchine prima nella GPO relativa)
+        Devono essere raggiungibili via CIFS sulla porta 445 (se usate una wks del gasip dovreste raggiungere tutto
+        senza aprire regole firewall)</p>
+      <p>Nel file allegato è presente una folder <em>sep_sylink_script</em> che contiene tutti i sorgenti per la
+        eseguire la migrazione:</p>
+      <ul>
+        <li>sylink.bat che serve per lanciare l'eseguibile</li>
+        <li>sylinkDrop.exe è l'eseguibile dove viene allegato il file xml</li>
+        <li>Nuove_Installazioni_sylink.xml è il file xml che contiene le informazione per connettere il client alla
+          nuova console</li>
+        <li>host_to_migrate.txt è la lista delle macchine a cui applicare la modifica.</li>
+      </ul>
+      <blockquote>
+        <p>Va aggiunta una macchina per riga
+          la folder deve essere copiata in un path della workstation locale del gasip, e che sia raggiungibile poi
+          quando eseguite lo script.</p>
+      </blockquote>
+      <p><strong>Di seguito lo script descritto:</strong></p>
+      <p>Importa le credenziali da un file xml crittografato</p>
+      <pre><code class="language-powershell"><span class="hljs-variable">$credential</span> = <span class="hljs-built_in">Import-CliXml</span> <span class="hljs-literal">-Path</span> <span class="hljs-string">&quot;E:\script\cred_symantec_ad.xml&quot;</span>
+</code></pre>
+      <p>file txt dove inserire i nomi macchina dei client da migrare</p>
+      <pre><code class="language-powershell"><span class="hljs-variable">$files</span> = <span class="hljs-built_in">Get-Content</span> <span class="hljs-literal">-Path</span> .\host_to_migrate.txt
+</code></pre>
+      <p>il ciclo foreach che prende ogni macchina dentro il file txt ed esegue una per volta le istruzioni all'interno
+        del ciclo</p>
       <pre><code class="language-powershell"><span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$host_item</span> <span class="hljs-keyword">in</span> <span class="hljs-variable">$files</span>)
 {
 
-      .\psexec.exe <span class="hljs-literal">-accepteula</span> \\<span class="hljs-variable">$host_item</span> <span class="hljs-literal">-h</span> <span class="hljs-literal">-s</span> <span class="hljs-literal">-u</span> domain\user <span class="hljs-literal">-p</span> <span class="hljs-string">&#x27;********&#x27;</span>  powershell.exe <span class="hljs-built_in">Enable-PSRemoting</span> <span class="hljs-literal">-SkipNetworkProfileCheck</span> <span class="hljs-literal">-Force</span>
-    
-      <span class="hljs-variable">$remotepath</span> = <span class="hljs-string">&quot;\\<span class="hljs-variable">$host_item</span>\c<span class="hljs-variable">$</span>&quot;</span>
-      <span class="hljs-built_in">New-PSDrive</span> <span class="hljs-literal">-Name</span> B <span class="hljs-literal">-PSProvider</span> FileSystem <span class="hljs-literal">-Root</span> <span class="hljs-variable">$remotepath</span> <span class="hljs-literal">-Persist</span> <span class="hljs-literal">-Credential</span> <span class="hljs-variable">$Credential</span>
-      <span class="hljs-built_in">Copy-Item</span> <span class="hljs-string">&quot;.\sep_sylink_script&quot;</span> <span class="hljs-literal">-Destination</span> B: <span class="hljs-literal">-Recurse</span>
-      <span class="hljs-built_in">Invoke-Command</span> <span class="hljs-literal">-Credential</span> <span class="hljs-variable">$Credential</span> <span class="hljs-literal">-ComputerName</span> <span class="hljs-variable">$host_item</span> <span class="hljs-literal">-ScriptBlock</span> {c:\sep_sylink_script\Sylink.bat}
-      <span class="hljs-built_in">Remove-Item</span> <span class="hljs-literal">-Path</span> B:\sep_sylink_script <span class="hljs-literal">-Force</span> <span class="hljs-literal">-Recurse</span>
-      <span class="hljs-built_in">Remove-PSdrive</span> <span class="hljs-literal">-Name</span> B
-    }
-      </code></pre>
+.\psexec.exe <span class="hljs-literal">-accepteula</span> \\<span class="hljs-variable">$host_item</span> <span class="hljs-literal">-h</span> <span class="hljs-literal">-s</span> <span class="hljs-literal">-u</span> domain\user <span class="hljs-literal">-p</span> <span class="hljs-string">&#x27;********&#x27;</span>  powershell.exe <span class="hljs-built_in">Enable-PSRemoting</span> <span class="hljs-literal">-SkipNetworkProfileCheck</span> <span class="hljs-literal">-Force</span>
+
+<span class="hljs-variable">$remotepath</span> = <span class="hljs-string">&quot;\\<span class="hljs-variable">$host_item</span>\c<span class="hljs-variable">$</span>&quot;</span>
+<span class="hljs-built_in">New-PSDrive</span> <span class="hljs-literal">-Name</span> B <span class="hljs-literal">-PSProvider</span> FileSystem <span class="hljs-literal">-Root</span> <span class="hljs-variable">$remotepath</span> <span class="hljs-literal">-Persist</span> <span class="hljs-literal">-Credential</span> <span class="hljs-variable">$Credential</span>
+<span class="hljs-built_in">Copy-Item</span> <span class="hljs-string">&quot;.\sep_sylink_script&quot;</span> <span class="hljs-literal">-Destination</span> B: <span class="hljs-literal">-Recurse</span>
+<span class="hljs-built_in">Invoke-Command</span> <span class="hljs-literal">-Credential</span> <span class="hljs-variable">$Credential</span> <span class="hljs-literal">-ComputerName</span> <span class="hljs-variable">$host_item</span> <span class="hljs-literal">-ScriptBlock</span> {c:\sep_sylink_script\Sylink.bat}
+<span class="hljs-built_in">Remove-Item</span> <span class="hljs-literal">-Path</span> B:\sep_sylink_script <span class="hljs-literal">-Force</span> <span class="hljs-literal">-Recurse</span>
+<span class="hljs-built_in">Remove-PSdrive</span> <span class="hljs-literal">-Name</span> B
+}
+</code></pre>
+      <p>fine dello script, premere invio per uscire</p>
+      <pre><code class="language-powershell"><span class="hljs-built_in">Read-Host</span> <span class="hljs-literal">-Prompt</span> <span class="hljs-string">&quot;Premere Invio per uscire&quot;</span>
+</code></pre>
+      <p><em>ver. 1.0</em></p>
+      <p><em>Powered by @jacopo.pica</em></p>
+
+      <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
     </div>
-  </div> 
+  </div>
   <footer>
-  <table align = "center">
-   <tr>
-    <td>
-        <a href="https://it.linkedin.com/in/jacopo-pica">
+    <table align="center">
+      <tr>
+        <td>
+          <a href="https://it.linkedin.com/in/jacopo-pica">
             <img src="../images/linkedin_logo.png"></a>
-    </td>
-    <td>
-        <a href="https://twitter.com/d0ntc0s">
+        </td>
+        <td>
+          <a href="https://twitter.com/d0ntc0s">
             <img src="../images/twitter_logo.png"></a>
-    </td> 
-    <td>
-        <a href="https://www.instagram.com/jacopo_cornelis_escher/">
+        </td>
+        <td>
+          <a href="https://www.instagram.com/jacopo_cornelis_escher/">
             <img src="../images/instagram_logo.png"></a>
-    </td>
-   </tr>
-  </table>
- </footer>
+        </td>
+      </tr>
+    </table>
+  </footer>
 
 </body>
+
 </html>
