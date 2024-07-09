@@ -1,11 +1,12 @@
   @import url('https://fonts.cdnfonts.com/css/cascadia-code');
 
-  hmtl,
+  html,
   body {
     font-family: 'Cascadia Code', sans-serif;
     background-color: transparent;
     font-size: var(--markdown-font-size, 14px);
     padding: 0 26px;
+    line-height: var(--markdown-line-height, 22px);
     word-wrap: break-word;
   }
 
@@ -23,6 +24,7 @@
     font-weight: 600;
     margin-top: 24px;
     margin-bottom: 16px;
+    line-height: 1.25;
   }
 
   #code-csp-warning {
@@ -135,15 +137,11 @@
     font-size: 2em;
     margin-top: 0;
     padding-bottom: 0.3em;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
   }
 
   h2 {
     font-size: 1.5em;
     padding-bottom: 0.3em;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
   }
 
   h3 {
