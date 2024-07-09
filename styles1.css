@@ -6,7 +6,6 @@
     background-color: transparent;
     font-size: var(--markdown-font-size, 14px);
     padding: 0 26px;
-    line-height: var(--markdown-line-height, 22px);
     word-wrap: break-word;
   }
 
@@ -24,7 +23,6 @@
     font-weight: 600;
     margin-top: 24px;
     margin-bottom: 16px;
-    line-height: 1.25;
   }
 
   #code-csp-warning {
