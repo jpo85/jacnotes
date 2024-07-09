@@ -1,181 +1,136 @@
 <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>Fotogrammetria con Meshroom e Google Colab</title>
-            <style>
-/* From extension vscode.github */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
+<html lang="it">
 
-.vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only],
-.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
-.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
-	display: none;
-}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jacnotes_/articoli/articles_001</title>
+  <link rel="icon" type="image/x-icon" href="../images/terminal.ico">
+  <link rel="stylesheet" href="../styles1.css">
+</head>
 
-</style>
-            
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-<style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        </style>
-        <style>
-.task-list-item {
-    list-style-type: none;
-}
+<body>
+  <table style="width:100%">
+    <tr>
+      <td>
+        <img src="../images/coding.png">
+      </td>
+      <td style="width:80%">
+        <h1>articoli_</h1>
+      </td>
+      <td>
+        <h3>
+          <a href="../index.html">home</a>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          <a href="../articoli.html">articoli</a>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          <a href="../progetti.html">progetti</a>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          <a href="../chisono.html">chi_sono</a>
+        </h3>
+      </td>
+    </tr>
+  </table>
 
-.task-list-item-checkbox {
-    margin-left: -20px;
-    vertical-align: middle;
-    pointer-events: none;
-}
-</style>
-<style>
-:root {
-  --color-note: #0969da;
-  --color-tip: #1a7f37;
-  --color-warning: #9a6700;
-  --color-severe: #bc4c00;
-  --color-caution: #d1242f;
-  --color-important: #8250df;
-}
+  <div class="article">
+    <div class="article">
+      <h1 id="fotogrammetria-con-meshroom-e-google-colab">Fotogrammetria con Meshroom e Google Colab</h1>
+      <h2
+        id="come-creare-un-flusso-di-lavoro-colab-per-la-creazione-di-un-modello-3dfotogrammetrico-tramite-foto-su-onedrive-gen-17-2024">
+        Come creare un flusso di lavoro Colab per la creazione di un modello 3d(fotogrammetrico) tramite foto su
+        onedrive, Gen 17, 2024</h2>
+      <h3
+        id="questa-pagina-web-si-prefigge-lo-scopo-di-facilitare-lelaborazione-di-un-dataset-di-foto-per-tentare-una-prima-elaborazione-e-ricostruzione">
+        Questa pagina web si prefigge lo scopo di facilitare l'elaborazione di un dataset di foto per tentare una prima
+        elaborazione e ricostruzione</h3>
+      <p>fotogrammetrica. Gli strumenti che vengono utilizzati per eseguire l'elaborazione sono il servizio Google colab
+        e Meshroom.</p>
+      <p>Il servizio Google Colab, ha lo scopo di eseguire in cloud lo script composto da comandi shell bash e python
+        per l'elaborazione delle immagini e la creazione della mesh 3d finale. Google Colab è una piattaforma di google,
+        nata principalmente per eseguire quelle operazioni di machine learning che richiedono prestazioni e potenza di
+        calcolo elevata.</p>
+      <p>Nel nostro caso specifico verrà utilizzato per fini alternativi, e verrà messo a disposizione
+        dall'infrastruttura cloud la seguente potenza di calcolo:</p>
+      <ul>
+        <li>32 GB di RAM</li>
+        <li>GPU con 16GB di RAM dedicata e funzionalità CUDA</li>
+        <li>Circa 40GB su filesystem</li>
+      </ul>
+      <p>Meshroom è un software con licenza opensource che consente tramite foto e video di effettuare una ricostruzione
+        fotogrammetrica, basandosi sul framework AliceVision. L'interfaccia di utilizzo è basata sulla logica dei
+        workflow, in cui ogni blocco è collegato al successivo salvando su una folder l'elaborazione temporanea ed
+        infine generando una mesh poligonale.</p>
+      <p>Questo runtime consente eventualmente anche di utilizzare un workflow custom in cui è possibile avere più
+        risultati diversi: si può ad esempio aggiungere un workflow di post produzione che effettua un Meshdecimate +
+        Retexturing + Retopology della mesh, oppure esportare la pointcloud prima che venga creata la mesh; si può
+        aggiungere anche un workflow che esporta la mesh finale ed effettua l'upload su sketchfab.</p>
+      <blockquote>
+        <p>Per fare tutto ciò, basta creare un workflow custom tramite GUI dalla propria installazione meshroom su pc ed
+          eportarlo in formato .mg in modo poi da
+          copiare il file su google drive ed inserirlo nel comando: meshroom_compute --forceCompute
+          /content/Mydrive/custom_workflow.mg</p>
+      </blockquote>
+      <h3 id="come-funziona">Come funziona</h3>
+      <p>La logica di questa guida è innanzitutto capire che non si tratta di una semplice pagina web statica ma di una
+        vera e propria guida StepByStep in cui dopo ogni spiegazione è presente direttamente il codice già compilato da
+        eseguire. In ogni cella è già scritto tutto il codice necessario per una elaborazione standard.</p>
+      <p>Il workflow di default che viene eseguito in questa guida consente di leggere una dataset di foto e generare un
+        file obj 3d con le sue relative texture.</p>
+      <p>Il risutato finale sarà:</p>
+      <ul>
+        <li>1 file in formato .obj</li>
+        <li>vari file di texture in formato .jpeg</li>
+        <li>1 file con la libreria dei materia in formato .mtl</li>
+        <li>Il codice presente è modificabile a seconda delle proprie esigenze. Ad esempio se si dispone di un workflow
+          meshroom custom (.mg file)si può eseguire la realtiva cella avendo precedentemente importato il file e avendo
+          l'accortezza di modificare al suo interno tutti i path.</li>
+      </ul>
+      <blockquote>
+        <p>Di default il comando nella cella è commentato, per eseguirlo deve essere decommentato</p>
+      </blockquote>
+      <h3 id="prerequisiti">Prerequisiti</h3>
+      <p>Lo script per essere eseguito prevede una minima configurazione iniziale e non necessita successivamente di
+        scrivere codice. Come prerequisito serve avere un'account google drive con spazio a sufficienza per fare
+        l'upload delle foto e salvare la mesh finale. Lo script infatti utilizza come input e output due folder di
+        google drive, le quali dovranno essere create a mano per consentire al codice di leggere le foto, elaborarle e
+        salvare la mesh finale.</p>
+      <h3 id="guida-stepbystep">Guida StepByStep</h3>
+      <p>Di seguito uno dopo l'altro sono riportati tutti i passaggi da eseguire che guideranno l'utente
+        nell'elaborazione fotogrammetrica.
+        Per eseguire il codice basta cliccare sul tasto play (run cell). Comparirà un messaggio di avviso, andare avanti
+        e cliccare su run anyway.</p>
+      <p><a
+          href="https://colab.research.google.com/github/jpo85/meshroom_colab_new/blob/main/runtime_script.ipynb"><strong>https://colab.research.google.com/github/jpo85/meshroom_colab_new/blob/main/runtime_script.ipynb</strong></a>
+      </p>
+    </div>
+  </div>
+  <footer>
+    <table align="center">
+      <tr>
+        <td>
+          <a href="https://it.linkedin.com/in/jacopo-pica">
+            <img src="../images/linkedin_logo.png"></a>
+        </td>
+        <td>
+          <a href="https://twitter.com/d0ntc0s">
+            <img src="../images/twitter_logo.png"></a>
+        </td>
+        <td>
+          <a href="https://www.instagram.com/jacopo_cornelis_escher/">
+            <img src="../images/instagram_logo.png"></a>
+        </td>
+      </tr>
+    </table>
+  </footer>
 
-</style>
-<style>
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-note: #2f81f7;
-    --color-tip: #3fb950;
-    --color-warning: #d29922;
-    --color-severe: #db6d28;
-    --color-caution: #f85149;
-    --color-important: #a371f7;
-  }
-}
+</body>
 
-</style>
-<style>
-.markdown-alert {
-  padding: 0.5rem 1rem;
-  margin-bottom: 16px;
-  color: inherit;
-  border-left: .25em solid #888;
-}
-
-.markdown-alert>:first-child {
-  margin-top: 0
-}
-
-.markdown-alert>:last-child {
-  margin-bottom: 0
-}
-
-.markdown-alert .markdown-alert-title {
-  display: flex;
-  font-weight: 500;
-  align-items: center;
-  line-height: 1
-}
-
-.markdown-alert .markdown-alert-title .octicon {
-  margin-right: 0.5rem;
-  display: inline-block;
-  overflow: visible !important;
-  vertical-align: text-bottom;
-  fill: currentColor;
-}
-
-.markdown-alert.markdown-alert-note {
-  border-left-color: var(--color-note);
-}
-
-.markdown-alert.markdown-alert-note .markdown-alert-title {
-  color: var(--color-note);
-}
-
-.markdown-alert.markdown-alert-important {
-  border-left-color: var(--color-important);
-}
-
-.markdown-alert.markdown-alert-important .markdown-alert-title {
-  color: var(--color-important);
-}
-
-.markdown-alert.markdown-alert-warning {
-  border-left-color: var(--color-warning);
-}
-
-.markdown-alert.markdown-alert-warning .markdown-alert-title {
-  color: var(--color-warning);
-}
-
-.markdown-alert.markdown-alert-tip {
-  border-left-color: var(--color-tip);
-}
-
-.markdown-alert.markdown-alert-tip .markdown-alert-title {
-  color: var(--color-tip);
-}
-
-.markdown-alert.markdown-alert-caution {
-  border-left-color: var(--color-caution);
-}
-
-.markdown-alert.markdown-alert-caution .markdown-alert-title {
-  color: var(--color-caution);
-}
-
-</style>
-        
-        </head>
-        <body class="vscode-body vscode-light">
-            <h1 id="fotogrammetria-con-meshroom-e-google-colab">Fotogrammetria con Meshroom e Google Colab</h1>
-<h2 id="come-creare-un-flusso-di-lavoro-colab-per-la-creazione-di-un-modello-3dfotogrammetrico-tramite-foto-su-onedrive-gen-17-2024">Come creare un flusso di lavoro Colab per la creazione di un modello 3d(fotogrammetrico) tramite foto su onedrive, Gen 17, 2024</h2>
-<h3 id="questa-pagina-web-si-prefigge-lo-scopo-di-facilitare-lelaborazione-di-un-dataset-di-foto-per-tentare-una-prima-elaborazione-e-ricostruzione">Questa pagina web si prefigge lo scopo di facilitare l'elaborazione di un dataset di foto per tentare una prima elaborazione e ricostruzione</h3>
-<p>fotogrammetrica. Gli strumenti che vengono utilizzati per eseguire l'elaborazione sono il servizio Google colab e Meshroom.</p>
-<p>Il servizio Google Colab, ha lo scopo di eseguire in cloud lo script composto da comandi shell bash e python per l'elaborazione delle immagini e la creazione della mesh 3d finale. Google Colab è una piattaforma di google, nata principalmente per eseguire quelle operazioni di machine learning che richiedono prestazioni e potenza di calcolo elevata.</p>
-<p>Nel nostro caso specifico verrà utilizzato per fini alternativi, e verrà messo a disposizione dall'infrastruttura cloud la seguente potenza di calcolo:</p>
-<ul>
-<li>32 GB di RAM</li>
-<li>GPU con 16GB di RAM dedicata e funzionalità CUDA</li>
-<li>Circa 40GB su filesystem</li>
-</ul>
-<p>Meshroom è un software con licenza opensource che consente tramite foto e video di effettuare una ricostruzione fotogrammetrica, basandosi sul framework AliceVision. L'interfaccia di utilizzo è basata sulla logica dei workflow, in cui ogni blocco è collegato al successivo salvando su una folder l'elaborazione temporanea ed infine generando una mesh poligonale.</p>
-<p>Questo runtime consente eventualmente anche di utilizzare un workflow custom in cui è possibile avere più risultati diversi: si può ad esempio aggiungere un workflow di post produzione che effettua un Meshdecimate + Retexturing + Retopology della mesh, oppure esportare la pointcloud prima che venga creata la mesh; si può aggiungere anche un workflow che esporta la mesh finale ed effettua l'upload su sketchfab.</p>
-<blockquote>
-<p>Per fare tutto ciò, basta creare un workflow custom tramite GUI dalla propria installazione meshroom su pc ed eportarlo in formato .mg in modo poi da
-copiare il file su google drive ed inserirlo nel comando: meshroom_compute --forceCompute /content/Mydrive/custom_workflow.mg</p>
-</blockquote>
-<h3 id="come-funziona">Come funziona</h3>
-<p>La logica di questa guida è innanzitutto capire che non si tratta di una semplice pagina web statica ma di una vera e propria guida StepByStep in cui dopo ogni spiegazione è presente direttamente il codice già compilato da eseguire. In ogni cella è già scritto tutto il codice necessario per una elaborazione standard.</p>
-<p>Il workflow di default che viene eseguito in questa guida consente di leggere una dataset di foto e generare un file obj 3d con le sue relative texture.</p>
-<p>Il risutato finale sarà:</p>
-<ul>
-<li>1 file in formato .obj</li>
-<li>vari file di texture in formato .jpeg</li>
-<li>1 file con la libreria dei materia in formato .mtl</li>
-<li>Il codice presente è modificabile a seconda delle proprie esigenze. Ad esempio se si dispone di un workflow meshroom custom (.mg file)si può eseguire la      realtiva cella avendo precedentemente importato il file e avendo l'accortezza di modificare al suo interno tutti i path.</li>
-</ul>
-<blockquote>
-<p>Di default il comando nella cella è commentato, per eseguirlo deve essere decommentato</p>
-</blockquote>
-<h3 id="prerequisiti">Prerequisiti</h3>
-<p>Lo script per essere eseguito prevede una minima configurazione iniziale e non necessita successivamente di scrivere codice. Come prerequisito serve avere un'account google drive con spazio a sufficienza per fare l'upload delle foto e salvare la mesh finale. Lo script infatti utilizza come input e output due folder di google drive, le quali dovranno essere create a mano per consentire al codice di leggere le foto, elaborarle e salvare la mesh finale.</p>
-<h3 id="guida-stepbystep">Guida StepByStep</h3>
-<p>Di seguito uno dopo l'altro sono riportati tutti i passaggi da eseguire che guideranno l'utente nell'elaborazione fotogrammetrica.
-Per eseguire il codice basta cliccare sul tasto play (run cell). Comparirà un messaggio di avviso, andare avanti e cliccare su run anyway.</p>
-<p><a href="https://colab.research.google.com/github/jpo85/meshroom_colab_new/blob/main/runtime_script.ipynb"><strong>https://colab.research.google.com/github/jpo85/meshroom_colab_new/blob/main/runtime_script.ipynb</strong></a></p>
-
-            
-            
-        </body>
-        </html>
+</html>
