@@ -43,9 +43,9 @@
     <div class="article">
             <h2 id="script-installazione-client-sep-symantec-endpoint-security">Script installazione client sep (symantec endpoint security)</h2>
 <p>Questo script offre un metodo per l'installazione del client sep in modalità silente tramite uno script powershell. Puù essere utilzzato nel caso in cui non sia presente una softwre distribution all'interno del dominio di di macchine Windows.</p>
-<pre><code class="language-powershell"><span class="hljs-variable">$credential</span> = <span class="hljs-built_in">Import-CliXml</span> <span class="hljs-literal">-Path</span> <span class="hljs-string">&quot;e:\script\cred_s720624.xml&quot;</span>
+<pre><code class="language-powershell"><span class="hljs-variable">$credential</span> = <span class="hljs-built_in">Import-CliXml</span> <span class="hljs-literal">-Path</span> <span class="hljs-string">&quot;e:\script\******.xml&quot;</span>
 <span class="hljs-variable">$session</span> = <span class="hljs-built_in">New-PSSession</span> <span class="hljs-literal">-ComputerName</span> <span class="hljs-literal">-Credential</span> <span class="hljs-variable">$credential</span>
-<span class="hljs-variable">$file</span> = <span class="hljs-string">&quot;\\10.64.89.208\e<span class="hljs-variable">$</span>\script_install_client_symantec\setup.exe&quot;</span>
+<span class="hljs-variable">$file</span> = <span class="hljs-string">&quot;\\192.168.1.10\e<span class="hljs-variable">$</span>\script_install_client_symantec\setup.exe&quot;</span>
 <span class="hljs-variable">$path</span> = <span class="hljs-string">&quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System&quot;</span>
 <span class="hljs-variable">$filter</span>=<span class="hljs-string">&quot;ConsentPromptBehaviorAdmin|PromptOnSecureDesktop&quot;</span>
 <span class="hljs-variable">$files</span> = <span class="hljs-built_in">Get-Content</span> <span class="hljs-literal">-Path</span> .\host_to_install.txt
