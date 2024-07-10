@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>jacnotes_/articoli/articles_001</title>
 <link rel="icon" type="image/x-icon" href="../images/terminal.ico">
- <link rel="stylesheet" href="../styles.css">
+ <link rel="stylesheet" href="../styles1.css">
 </head>
 <body>
  <table style="width:100%">
@@ -41,15 +41,7 @@
  <div class="article">  
   <div class="article">
       <h2>Titolo Articolo</h2>
-      <h4>Descrizione articolo, Gen 1, 2024</h4>
-      <!--
-        <div class="img" style="height:200px;">Image</div>
-      -->
-      <p class="p3">paragrafo</p>
-      <p class="p3">paragrafo
-        testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestottestotestotestotesto
-        testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotesto
-        testotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotestotesto</p>
+      <h3>Descrizione articolo</h3>
     </div>
   </div> 
   <footer>
