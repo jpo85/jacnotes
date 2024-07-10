@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jacnotes_/articoli/articles_001</title>
+  <link rel="icon" type="image/x-icon" href="../images/terminal.ico">
+  <link rel="stylesheet" href="../styles1.css">
+</head>
+
+<body>
+  <table style="width:100%">
+    <tr>
+      <td>
+        <img src="../images/coding.png">
+      </td>
+      <td style="width:80%">
+        <h1>articoli_</h1>
+      </td>
+      <td>
+        <h3>
+          <a href="../index.html">home</a>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          <a href="../articoli.html">articoli</a>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          <a href="../progetti.html">progetti</a>
+        </h3>
+      </td>
+      <td>
+        <h3>
+          <a href="../chisono.html">chi_sono</a>
+        </h3>
+      </td>
+    </tr>
+  </table>
+
+  <div class="article">
+    <div class="article">
+      <h2 id="presentazione-di-proxmox">Presentazione di Proxmox</h2>
+      <blockquote>
+        <p><strong>HPE Engineer</strong></p>
+        <blockquote>
+          <p>Alessandro Moriondo</p>
+        </blockquote>
+      </blockquote>
+      <ol>
+        <li>cosa fa
+          <ul>
+            <li>hypervisor virtual machine stack kvm/qemu</li>
+            <li>container management lxc</li>
+          </ul>
+        </li>
+        <li>licensig
+          <ul>
+            <li>soluzione onpensource</li>
+            <li>pagamento del supporto per subscrition per socket</li>
+          </ul>
+        </li>
+        <li>modalità di configurazioni
+          <ul>
+            <li>2 nodi computazionali + 1 per management (backup server)</li>
+            <li>3 nodi integrato con ceph (software defined storage)</li>
+            <li>stretched cluster con lvm sharedcross dc con fc san</li>
+          </ul>
+        </li>
+      </ol>
+      <h3 id="1-cosa-fa">1. Cosa fa</h3>
+      <p>E' un hypervisor basato sul sistema operativo linux debian ed utilizza come stack KVM che è il modulo kernel
+        principale su linux per la virtualizzazione hardware e Qemu come stack applicativo per l'emulazione. Il nome
+        della soluzione è <strong>Proxmox VE</strong>.</p>
+      <p>Supporta inoltre lo stack LXC per l'esecuzione di container linux</p>
+      <p>Supporta l'hardware x86:</p>
+      <ul>
+        <li>intel vt-x</li>
+        <li>amd-v</li>
+      </ul>
+      <p><strong>Schema blocchi delle funzionalità e di tutti i servizi della soluzione proxmox VE</strong></p>
+      <p><img src="file:////home/jacopo/Documents/github_repo/jacnotes/markdown/proxmox1.png"
+          alt="schema a blocchi proxmox"></p>
+      <h4 id="11-deploy-e-management">1.1 Deploy e Management</h4>
+      <p>E' installabile direttametne bare metal sulle macchine tramite una iso scaricabile direttamente dal sito del
+        produttore. Una volta installato e configurata la rete di management l'host è gestibile tramite interfaccia web
+      </p>
+      <blockquote>
+        <p>L'interfaccia web può gestire il singolo nodo ma anche l'interno cluster o datacenter, percui non c'è bisogno
+          di effettuare il deploy di una appliance di gestione (esempio vcenter per vsphere), ma già ogni console web di
+          ogni singolo nodo del cluster può nativamente gestire l'intera infrastruttura. In questo modo si ha già una
+          ridondanza di management</p>
+      </blockquote>
+      <p>Supporta la completa gestione del cluster anche tramite CLI e tramite Restful API per l'automazione delle
+        attività</p>
+    </div>
+  </div>
+  <footer>
+    <table align="center">
+      <tr>
+        <td>
+          <a href="https://it.linkedin.com/in/jacopo-pica">
+            <img src="../images/linkedin_logo.png"></a>
+        </td>
+        <td>
+          <a href="https://twitter.com/d0ntc0s">
+            <img src="../images/twitter_logo.png"></a>
+        </td>
+        <td>
+          <a href="https://www.instagram.com/jacopo_cornelis_escher/">
+            <img src="../images/instagram_logo.png"></a>
+        </td>
+      </tr>
+    </table>
+  </footer>
+
+</body>
+
+</html>
