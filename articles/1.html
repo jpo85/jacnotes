@@ -42,15 +42,15 @@
 
   <div class="article">
     <div class="article">
-      <h1 id="fotogrammetria-con-meshroom-e-google-colab">Fotogrammetria con Meshroom e Google Colab</h1>
-      <h2
+      <h2 id="fotogrammetria-con-meshroom-e-google-colab">Fotogrammetria con Meshroom e Google Colab</h2>
+      <h3
         id="come-creare-un-flusso-di-lavoro-colab-per-la-creazione-di-un-modello-3dfotogrammetrico-tramite-foto-su-onedrive-gen-17-2024">
         Come creare un flusso di lavoro Colab per la creazione di un modello 3d(fotogrammetrico) tramite foto su
-        onedrive, Gen 17, 2024</h2>
-      <h3
+        onedrive, Gen 17, 2024</h3>
+      <h4
         id="questa-pagina-web-si-prefigge-lo-scopo-di-facilitare-lelaborazione-di-un-dataset-di-foto-per-tentare-una-prima-elaborazione-e-ricostruzione">
         Questa pagina web si prefigge lo scopo di facilitare l'elaborazione di un dataset di foto per tentare una prima
-        elaborazione e ricostruzione</h3>
+        elaborazione e ricostruzione</h4>
       <p>fotogrammetrica. Gli strumenti che vengono utilizzati per eseguire l'elaborazione sono il servizio Google colab
         e Meshroom.</p>
       <p>Il servizio Google Colab, ha lo scopo di eseguire in cloud lo script composto da comandi shell bash e python
@@ -78,7 +78,7 @@
           copiare il file su google drive ed inserirlo nel comando: meshroom_compute --forceCompute
           /content/Mydrive/custom_workflow.mg</p>
       </blockquote>
-      <h3 id="come-funziona">Come funziona</h3>
+      <h4 id="come-funziona">Come funziona</h4>
       <p>La logica di questa guida è innanzitutto capire che non si tratta di una semplice pagina web statica ma di una
         vera e propria guida StepByStep in cui dopo ogni spiegazione è presente direttamente il codice già compilato da
         eseguire. In ogni cella è già scritto tutto il codice necessario per una elaborazione standard.</p>
@@ -96,13 +96,13 @@
       <blockquote>
         <p>Di default il comando nella cella è commentato, per eseguirlo deve essere decommentato</p>
       </blockquote>
-      <h3 id="prerequisiti">Prerequisiti</h3>
+      <h4 id="prerequisiti">Prerequisiti</h4>
       <p>Lo script per essere eseguito prevede una minima configurazione iniziale e non necessita successivamente di
         scrivere codice. Come prerequisito serve avere un'account google drive con spazio a sufficienza per fare
         l'upload delle foto e salvare la mesh finale. Lo script infatti utilizza come input e output due folder di
         google drive, le quali dovranno essere create a mano per consentire al codice di leggere le foto, elaborarle e
         salvare la mesh finale.</p>
-      <h3 id="guida-stepbystep">Guida StepByStep</h3>
+      <h4 id="guida-stepbystep">Guida StepByStep</h4>
       <p>Di seguito uno dopo l'altro sono riportati tutti i passaggi da eseguire che guideranno l'utente
         nell'elaborazione fotogrammetrica.
         Per eseguire il codice basta cliccare sul tasto play (run cell). Comparirà un messaggio di avviso, andare avanti
