@@ -26,7 +26,7 @@ Supporta l'hardware x86:
 
 **Schema blocchi delle funzionalità e di tutti i servizi della soluzione proxmox VE**
 
-![schema a blocchi proxmox](proxmox1.png)
+![schema a blocchi proxmox](../images/proxmox_blocks.svg)
 
 #### 1.1 Deploy e Management
 
