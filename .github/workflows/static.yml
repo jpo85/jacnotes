@@ -44,7 +44,8 @@ jobs:
           for file in $(find ./markdown/ -name '*.md'); do
             output_file="./articles/$(basename "$file" .md).html"
             python - <<EOF
-import markdown, os
+import markdown 
+import os
 css = '<link rel="stylesheet" href="style.css">' # Cambia il percorso se necessario
 with open('$file', 'r') as f:
     md_content = f.read()
