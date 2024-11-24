@@ -38,12 +38,12 @@ jobs:
       - name: Install dependencies
         run: |
           pip install markdown # Libreria Python per convertire Markdown in HTML
-       - name: Convert Markdown to HTML
+      - name: Convert Markdown to HTML
         run: |
           mkdir -p output
           for file in $(find ./markdown/ -name '*.md'); do
             output_file="./articles/$(basename "$file" .md).html"
-            python -c "
+            python - <<EOF
 import markdown, os
 css = '<link rel=\"stylesheet\" href=./styles1.css>' # Cambia il percorso se necessario
 with open('$file', 'r') as f:
@@ -52,8 +52,8 @@ with open('$file', 'r') as f:
     html_with_css = f'{css}\n{html}'
     with open(os.environ['output_file'], 'w') as out_f:
         out_f.write(html_with_css)
-            "
-          done  
+        EOF
+          done
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
