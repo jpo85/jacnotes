@@ -6,7 +6,7 @@ input_file = sys.argv[1]
 output_file = sys.argv[2]
 
 # CSS da includere
-css = '<link rel="stylesheet" href="style.css">'
+css = '<link rel="stylesheet" href="styles1.css">'
 
 # Conversione da Markdown a HTML
 with open(input_file, 'r') as f:
