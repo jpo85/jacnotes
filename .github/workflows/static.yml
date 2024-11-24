@@ -40,11 +40,13 @@ jobs:
           pip install markdown # Libreria Python per convertire Markdown in HTML
       - name: Convert Markdown to HTML
         run: |
-          for file in $(find ./markdown -name '*.md'); do
+          mkdir -p output
+          for file in $(find . -name '*.md'); do
             base_name=$(basename "$file" .md)
-            output_file="./articles/$base_name.html"
-            python3 ./md_to_html.py "$file" "$output_file"
+            output_file="output/$base_name.html"
+            python3 script.py "$file" "$output_file"
           done
+          cp -rf $output_file ./articles
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
