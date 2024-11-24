@@ -46,7 +46,6 @@ jobs:
             output_file="output/$base_name.html"
             python3 md_to_html.py "$file" "$output_file"
           done
-          cp -rf $output_file ./articles
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
