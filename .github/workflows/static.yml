@@ -51,7 +51,7 @@ jobs:
       # Trova l'ultimo file HTML generato
       - name: find last *.md file in markdown
         run: |
-          latest_file=$(find ./articles/ -type f -name "*.html" -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2)
+          latest_file=$(find ./markdown/ -type f -name "*.md" -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2)
           echo $latest_file
       # Step 4: Update articles.html con nuovo link dell'articolo
       #- name: Update articles.html
