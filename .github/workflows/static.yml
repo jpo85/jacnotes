@@ -43,6 +43,16 @@ jobs:
       # Trova l'ultimo file Markdown modificato nel commit
       - name: find latest md
         run: |
+          # Verifica se ci sono commit nel repository
+          if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" != "true" ]; then
+            echo "Git is not properly initialized in this environment."
+          exit 1
+          fi
+        
+          if [ "$(git rev-list --count HEAD)" -eq 0 ]; then
+            echo "No commits found in the repository. Skipping step."
+          exit 0
+          fi
           latest_md_file=$(git diff --name-only HEAD~1 HEAD | grep '^markdown/.*\.md$' || true)
           if [ -z "$latest_md_file" ]; then
             echo "No Markdown files were modified in the last commit."
