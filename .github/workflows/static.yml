@@ -49,16 +49,16 @@ jobs:
             python3 md_to_html.py "$file" "$output_file"
           done
       # Trova l'ultimo file HTML generato
-      #- name: find last *.html file in articles
-      #  run: |
-      #    latest_file=$(ls -t articles/html/*.html | head -n 1)
+      - name: find last *.html file in articles
+        run: |
+          latest_file=$(ls -t ./articles/*.html | head -n 1)
       # Step 4: Update articles.html con nuovo link dell'articolo
-      #- name: Update articles.html
-      #  run: |
-      #    filename=$(basename "$latest_file" .html)
-      #    article_title=$(head -n 1 "articles/${filename}.md" | sed 's/# //')
-      #    new_link="<li><a href=\"${latest_file}\">${article_title}</a></li>"
-      #    sed -i "/<!-- ARTICLES_PLACEHOLDER -->/a ${new_link}" index.html
+      - name: Update articles.html
+        run: |
+          filename=$(basename "$latest_file" .html)
+          article_title=$(head -n 1 "./markdown/${filename}.md" | sed 's/# //')
+          new_link="<li><a href=\"${latest_file}\">${article_title}</a></li>"
+          sed -i "/<!-- ARTICLES_PLACEHOLDER -->/a ${new_link}" ./articoli.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
