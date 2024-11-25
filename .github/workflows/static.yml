@@ -41,14 +41,9 @@ jobs:
         run: |
           pip install markdown
       # Trova l'ultimo file Markdown modificato nel commit
-      - name: find latest md
+      - name: get commit
         run: |
-          latest_md_file=$(git diff --name-only HEAD~1 HEAD -- | grep '^markdown/.*\.md$' || true)
-          if [ -z "$latest_md_file" ]; then
-            echo "No Markdown files were modified in the last commit."
-            exit 0
-          fi
-          echo latest_md_file
+         git rev-list --count HEAD
       # Step 4: converti file *md in *html con style1.css
       - name: Convert Markdown to HTML
         run: |
