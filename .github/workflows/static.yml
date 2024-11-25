@@ -31,13 +31,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # setupo di Python per script (convertire Markdown in HTML)
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+      # Libreria Python per convertire Markdown in HTML
       - name: Install dependencies
         run: |
-          pip install markdown # Libreria Python per convertire Markdown in HTML
+          pip install markdown
+      # Step 4: converti file *md in *html con style1.css
       - name: Convert Markdown to HTML
         run: |
           for file in $(find ./markdown -name '*.md'); do
@@ -45,6 +48,17 @@ jobs:
             output_file="./articles/$base_name.html"
             python3 md_to_html.py "$file" "$output_file"
           done
+      # Trova l'ultimo file HTML generato
+      #- name: find last *.html file in articles
+      #  run: |
+      #    latest_file=$(ls -t articles/html/*.html | head -n 1)
+      # Step 4: Update articles.html con nuovo link dell'articolo
+      #- name: Update articles.html
+      #  run: |
+      #    filename=$(basename "$latest_file" .html)
+      #    article_title=$(head -n 1 "articles/${filename}.md" | sed 's/# //')
+      #    new_link="<li><a href=\"${latest_file}\">${article_title}</a></li>"
+      #    sed -i "/<!-- ARTICLES_PLACEHOLDER -->/a ${new_link}" index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
