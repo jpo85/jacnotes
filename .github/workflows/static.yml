@@ -63,7 +63,7 @@ jobs:
           fi
           # Step 4: Update articles.html con nuovo link dell'articolo
           article_title=$(head -n 1 "./markdown/${last_md_file}.md" | sed 's/# //')
-          new_link='<div><a href="./articles/'${last_md_file}'.html">'${article_title}'</a></div>'
+          new_link='<div class="article"><a href="./articles/'${last_md_file}'.html"><h4>'${article_title}'</h4></a></div>'
           sed -i "/<!-- ARTICLES_PLACEHOLDER -->/a ${new_link}" ./articoli.html
       # Step 4: converti file *md in *html con style1.css
       - name: Convert Markdown to HTML
