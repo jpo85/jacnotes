@@ -44,6 +44,13 @@ jobs:
       - name: get commit
         run: |
          git rev-list --count HEAD
+         latest_md_file=$(git diff-tree --no-commit-id --name-only -r HEAD | grep '^markdown/.*\.md$' || true)
+         if [ -z "$latest_md_file" ]; then
+          echo "No Markdown files were modified in the last commit."
+          exit 0
+         else
+          echo latest_md_file
+         fi
       # Step 4: converti file *md in *html con style1.css
       - name: Convert Markdown to HTML
         run: |
