@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # setupo di Python per script (convertire Markdown in HTML)
+      # setup di Python per script (convertire Markdown in HTML)
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -40,6 +40,15 @@ jobs:
       - name: Install dependencies
         run: |
           pip install markdown
+      # Trova l'ultimo file Markdown modificato nel commit
+      - name: find latest md
+        run: |
+          latest_md_file=$(git diff --name-only HEAD~1 HEAD | grep '^markdown/.*\.md$' || true)
+          if [ -z "$latest_md_file" ]; then
+            echo "No Markdown files were modified in the last commit."
+            exit 0
+          fi
+          echo latest_md_file
       # Step 4: converti file *md in *html con style1.css
       - name: Convert Markdown to HTML
         run: |
@@ -48,11 +57,6 @@ jobs:
             output_file="./articles/$base_name.html"
             python3 md_to_html.py "$file" "$output_file"
           done
-      # Trova l'ultimo file HTML generato
-      - name: find last *.md file in markdown
-        run: |
-          latest_file=$(find ./markdown/ -type f -name "*.md" -printf "%T@ %p\n" | sort -n | tail -1 | cut -d' ' -f2)
-          echo $latest_file
       # Step 4: Update articles.html con nuovo link dell'articolo
       #- name: Update articles.html
       #  run: |
