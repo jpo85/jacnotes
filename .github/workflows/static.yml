@@ -50,15 +50,18 @@ jobs:
             # Controlla se è stato trovato un file
           if [ -n "$FILE" ]; then
             # Rimuove l'estensione del file
-            FILE_NO_EXT="${FILE%.*}"
+            last_md_file="${FILE%.*}"
             # Salva il risultato in una variabile
-            echo "Il nome del file senza estensione è: $FILE_NO_EXT"
+            echo "Il nome del file senza estensione è: $last_md_file"
+            cp -rf "$FOLDER"/"$last_md_file".md ./markdown/"$last_md_file".md
+            rm -rf "$FOLDER"/"$last_md_file".md
           else
             echo "La cartella è vuota."
           fi
           else
             echo "La cartella $FOLDER non esiste."
           fi
+
       # Step 4: converti file *md in *html con style1.css
       - name: Convert Markdown to HTML
         run: |
