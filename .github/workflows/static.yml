@@ -49,9 +49,9 @@ jobs:
             python3 md_to_html.py "$file" "$output_file"
           done
       # Trova l'ultimo file HTML generato
-      - name: find last *.html file in articles
+      - name: find last *.md file in markdown
         run: |
-          latest_file=$(ls -t ./articles/*.html | head -n 1)
+          latest_file=$(ls -t ./markdown/*.md | head -n 1)
           echo $latest_file
       # Step 4: Update articles.html con nuovo link dell'articolo
       #- name: Update articles.html
