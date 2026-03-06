@@ -40,7 +40,7 @@ github_username:  jekyll
 #theme: minima
 theme: jekyll-theme-simplex
 plugins:
-  - jekyll-feed
+  - jekyll-theme-simplex
 
 # Exclude from processing.
 # The following items will not be processed, by default.
