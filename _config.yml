@@ -38,9 +38,9 @@ github_username:  jekyll
 
 # Build settings
 #theme: minima
-theme: jekyll-theme-simplex
+remote_theme: andreondra/jekyll-theme-simplex
 plugins:
-  - jekyll-theme-simplex
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
