@@ -31,7 +31,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   condividere con chi vuole le mie esperienze e come io ho risolto determinati problemi. 
   Dal punto di vista tecnico tutto quello pubblicato qui sopra è 
   contestabile e sono ben accettati consigli e critiche.
-baseurl: "/jacnotes" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
