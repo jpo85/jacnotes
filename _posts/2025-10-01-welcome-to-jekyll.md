@@ -13,4 +13,4 @@ categories: jekyll update
   Non voglio dare lezioni sotto forma di "lectio magistralis", ma semplicemente 
   condividere con chi vuole le mie esperienze e come io ho risolto determinati problemi. 
   Dal punto di vista tecnico tutto quello pubblicato qui sopra è 
-  contestabile e sono ben accettati consigli e critiche
+  contestabile e sono ben accettati consigli e critiche.
