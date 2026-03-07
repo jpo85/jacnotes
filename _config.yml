@@ -21,16 +21,7 @@
 title: Jac@Notes
 email: jacopo.pica@outlook.it
 description: >- # this means to ignore newlines until "baseurl:"
-  Questo blog nasce dalla voglia di unire due desideri, il primo, 
-  quello di riordinare la grande quantità di guide e progetti nate 
-  negli anni a seguito del mio lavoro (e non solo!) di system engineer, 
-  ed il secondo, quello di mettere a disposizione degli altri 
-  delle guide immediate e senza fronzoli su come risolvere alcuni problemi 
-  ed effettuare determinate configurazioni. 
-  Non voglio dare lezioni sotto forma di "lectio magistralis", ma semplicemente 
-  condividere con chi vuole le mie esperienze e come io ho risolto determinati problemi. 
-  Dal punto di vista tecnico tutto quello pubblicato qui sopra è 
-  contestabile e sono ben accettati consigli e critiche.
+ by Jacopo Pica
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
