@@ -2,7 +2,13 @@
 layout: post
 title:  "Cosa è jac@notes"
 date:   2026-03-01
-categories: jekyll update
+category: [design,] #One, more categories or no at all.
+author: jpo85 #Author's nick.
+nextPart: #Next part.
+prevPart: #Previous part.
+og_image: #Open Graph preview image.
+og_description: "descrizione." #Open Graph description.
+fb_app_id: example
 ---
 Questo blog nasce dalla voglia di unire due desideri, il primo, quello di riordinare la grande quantità di guide e progetti nate negli anni a seguito del mio lavoro (e non solo!) di system engineer, ed il secondo, quello di mettere a disposizione degli altri 
 delle guide immediate e senza fronzoli su come risolvere alcuni problemi ed effettuare determinate configurazioni. 
