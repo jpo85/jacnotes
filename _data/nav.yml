@@ -14,3 +14,7 @@
   url: category/guide.html
   icon: assets/img/icons/guide.svg
   hue: "var(--c-themeHueRed)"
+- title: Guide
+  url: category/altro.html
+  icon: assets/img/icons/altro.svg
+  hue: "var(--c-themeHueRed)"
