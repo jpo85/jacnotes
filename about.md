@@ -1,18 +1,12 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Chi sono
+category: [Chi sono,] #One, more categories or no at all.
 ---
+Trovo difficile descrivermi in poche righe, come disse Eraclito ** Ogni giorno, quello che scegli, quello che pensi e quello che fai è ciò che diventi.** Posso dire quello che mi piaccciono tantissime cose, ed una di queste è certamente l'informatica !.
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+https://it.linkedin.com/in/jacopopica
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+https://github.com/jpo85/
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+https://www.instagram.com/jacopo_cornelis_escher
