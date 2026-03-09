@@ -3,14 +3,14 @@
   icon: assets/img/icons/programming.svg #Menu item icon.
   hue: "var(--c-themeHueRed)" #Menu item hue - see note [1].
   subnav: #Subnav. See note [2].
-      - title: C++ #Submenu item title.
+      - title: scripting #Submenu item title.
         url: category/cpp.html #Submenu item url.
         hue: "var(--c-themeHueOrange)" #Submenu item hue.
         subnav: #Another subnav
             - title: Libraries
               url: libs.html
               hue: "var(--c-themeHueBlue)"
-- title: Design
-  url: category/design.html
-  icon: assets/img/icons/design.svg
+- title: Guide
+  url: category/guide.html
+  icon: assets/img/icons/guide.svg
   hue: "var(--c-themeHueRed)"
