@@ -11,9 +11,6 @@ og_image: #Open Graph preview image.
 og_description: "descrizione." #Open Graph description.
 fb_app_id: example
 ---
-
-# Fotogrammetria con Meshroom e Google Colab
-
 ## Come creare un flusso di lavoro Colab per la creazione di un modello 3d(fotogrammetrico) tramite foto su onedrive, Gen 17, 2024  
 
 ### Questa pagina web si prefigge lo scopo di facilitare l'elaborazione di un dataset di foto per tentare una prima elaborazione e ricostruzione

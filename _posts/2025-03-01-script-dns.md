@@ -11,8 +11,7 @@ og_image: #Open Graph preview image.
 og_description: "descrizione." #Open Graph description.
 fb_app_id: example
 ---
-
-# Questo script effettua il get dei dns settati sulle schede di rete delle macchine.
+## Questo script effettua il get dei dns settati sulle schede di rete delle macchine.
 
 ### Come sorgente delle macchine su cui effettuare lla get prende gli indirizzi ip da una lista in txt
 

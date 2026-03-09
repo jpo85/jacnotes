@@ -11,8 +11,7 @@ og_image: #Open Graph preview image.
 og_description: "descrizione." #Open Graph description.
 fb_app_id: example
 ---
-
-# Script installazione client sep (symantec endpoint security)
+## Script installazione client sep (symantec endpoint security)
 
 Questo script offre un metodo per l'installazione del client sep in modalità silente tramite uno script powershell. Puù essere utilzzato nel caso in cui non sia presente una softwre distribution all'interno del dominio di di macchine Windows.
 

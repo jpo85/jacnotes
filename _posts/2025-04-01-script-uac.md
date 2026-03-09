@@ -11,8 +11,7 @@ og_image: #Open Graph preview image.
 og_description: "descrizione." #Open Graph description.
 fb_app_id: example
 ---
-
-# Script per la disabilitazione dell'UAC da remoto
+## Script per la disabilitazione dell'UAC da remoto
 
 > scrivere nel file lista_host.txt gli ip o l'hostname delle macchine su cui disabilitare l'uac
 

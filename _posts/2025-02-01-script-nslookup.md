@@ -11,8 +11,7 @@ og_image: #Open Graph preview image.
 og_description: "descrizione." #Open Graph description.
 fb_app_id: example
 ---
-
-# Questo script effettua nslookup di tutti gli ip da una lista in formato txt
+## Questo script effettua nslookup di tutti gli ip da una lista in formato txt
 
 ### Creare un file .txt ed inserire uno per riga tutti gli ip che si vuole risolvere con nslookup
 

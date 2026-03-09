@@ -11,10 +11,7 @@ og_image: #Open Graph preview image.
 og_description: "descrizione." #Open Graph description.
 fb_app_id: example
 ---
-
-### Il dipendente e l'azienda
-
-#### riflessione:
+### Riflessioni:
 
 L'azienda riflette i limiti della società e, di conseguenza, non può garantire a tutti le stesse condizioni o opportunità di carriera. Il suo scopo non è la soddisfazione dei dipendenti, ma il raggiungimento di specifici obiettivi. È il raggiungimento di questi obiettivi a generare il profitto necessario per fornire le risorse e il benessere dei lavoratori, ma tale benessere è un mezzo per conseguire ulteriori risultati, non un fine in sé. L'azienda non esiste per soddisfare i desideri dei dipendenti, ma per massimizzare i propri risultati, qualunque essi siano.
 Di conseguenza, il dipendente è chiamato a una riflessione personale sulle motivazioni che lo spingono a chiedere riconoscimento per il proprio impegno al datore di lavoro. Deve domandarsi se ciò che considera un contributo significativo è effettivamente in linea con le esigenze aziendali, o se rispecchia più le sue ambizioni personali, che potrebbero non coincidere con gli obiettivi dell'azienda. In altre parole, ciò che un dipendente percepisce come la massima espressione delle proprie capacità e del proprio impegno potrebbe non essere utile al raggiungimento degli obiettivi comuni. Per questo, non può aspettarsi automaticamente di essere riconosciuto e apprezzato solo perché ha investito un notevole sforzo fisico e mentale.
