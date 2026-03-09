@@ -2,8 +2,14 @@
 layout: post
 title:  "Fotogrammetria con Meshroom e Google Colab"
 date:   2025-07-01
-categories: jekyll update
 tags: 3d, google, fotogrammetria
+category: [Programming,Guide] #One, more categories or no at all.
+author: jpo85 #Author's nick.
+nextPart: #Next part.
+prevPart: #Previous part.
+og_image: #Open Graph preview image.
+og_description: "descrizione." #Open Graph description.
+fb_app_id: example
 ---
 
 # Fotogrammetria con Meshroom e Google Colab

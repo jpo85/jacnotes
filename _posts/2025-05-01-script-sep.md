@@ -1,9 +1,15 @@
 ---
 layout: post
-title:  "Script installazione client sep"
-date:   2025-05-01
-categories: jekyll update
+title: "Script installazione client sep"
+date: 2025-05-01
 tags: script, powershell, windows, security
+category: [Programming,Server] #One, more categories or no at all.
+author: jpo85 #Author's nick.
+nextPart: #Next part.
+prevPart: #Previous part.
+og_image: #Open Graph preview image.
+og_description: "descrizione." #Open Graph description.
+fb_app_id: example
 ---
 
 # Script installazione client sep (symantec endpoint security)

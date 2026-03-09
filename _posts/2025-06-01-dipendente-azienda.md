@@ -2,8 +2,14 @@
 layout: post
 title:  "Il dipendente e l'azienda"
 date:   2025-06-01
-categories: jekyll update
 tags: lavoro, pensieri
+category: [Altro,] #One, more categories or no at all.
+author: jpo85 #Author's nick.
+nextPart: #Next part.
+prevPart: #Previous part.
+og_image: #Open Graph preview image.
+og_description: "descrizione." #Open Graph description.
+fb_app_id: example
 ---
 
 ### Il dipendente e l'azienda
