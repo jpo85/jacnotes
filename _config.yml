@@ -52,7 +52,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-logo_img: /assets/img/logo.svg #Absolute path to the logo. If not specified, the title will be displayed instead.
+#logo_img: /assets/img/logo.svg #Absolute path to the logo. If not specified, the title will be displayed instead.
 copyright: © Jacopo Pica 2026 #Your copyright.
 
 collections:
