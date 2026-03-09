@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Cosa è jac@notes"
+category: [Chi sono,] #One, more categories or no at all.
 date:   2026-03-01
 author: jpo85 #Author's nick.
 ---
