@@ -2,14 +2,14 @@
   url: category/programming.html #Menu item url.
   icon: assets/img/icons/programming.svg #Menu item icon.
   hue: "var(--c-themeHueRed)" #Menu item hue - see note [1].
-  subnav: #Subnav. See note [2].
-      - title: scripting #Submenu item title.
-        url: category/cpp.html #Submenu item url.
-        hue: "var(--c-themeHueOrange)" #Submenu item hue.
-        subnav: #Another subnav
-            - title: Libraries
-              url: libs.html
-              hue: "var(--c-themeHueBlue)"
+#  subnav: #Subnav. See note [2].
+#      - title: scripting #Submenu item title.
+#        url: category/cpp.html #Submenu item url.
+#        hue: "var(--c-themeHueOrange)" #Submenu item hue.
+#        subnav: #Another subnav
+#            - title: Libraries
+#              url: libs.html
+#              hue: "var(--c-themeHueBlue)"
 - title: Guide
   url: category/guide.html
   icon: assets/img/icons/guide.svg
@@ -17,4 +17,8 @@
 - title: Altro
   url: category/altro.html
   icon: assets/img/icons/altro.svg
+  hue: "var(--c-themeHueRed)"
+- title: Chi Sono
+  url: category/chi_sono.html
+  icon: assets/img/icons/chi_sono.svg
   hue: "var(--c-themeHueRed)"
