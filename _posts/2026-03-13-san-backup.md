@@ -78,9 +78,9 @@ questo task va eseguito anche per il secondo switch **san2**
 
 tirare su lo stesso server scp da dove prenderà il file  
 
-connettersi allo switch TAN 1 **san1**
+connettersi allo switch **san1**
 ```bash
-ssh admin@10.10.10.2
+ssh admin@10.10.10.1
 ```
 
 ```bash
