@@ -1,5 +1,16 @@
-# Guida per fare il backup TAN
-
+---
+layout: post
+title:  "Guida per fare il backup SAN"
+date:   2026-03-13
+tags: server, storage, backup
+category: [Server,Storage,Backup] #One, more categories or no at all.
+author: jpo85 #Author's nick.
+nextPart: #Next part.
+prevPart: #Previous part.
+og_image: #Open Graph preview image.
+og_description: "descrizione." #Open Graph description.
+fb_app_id: example
+---
 Per fare il backup della san, procediamo con l'esportare la configurazione dello zoning sui due switch SAN.  
 
 Per fare questo abbiamo bisogno di un server scp da dare al comando nello switch per esportare la configurazione in txt.  
