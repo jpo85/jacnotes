@@ -18,7 +18,6 @@
   subnav:
     - title: Storage
       url: category/cpp.html
-      icon: assets/img/icons/harddisk.svg
       hue: "var(--c-themeHueRed)"
 
 - title: Altro
