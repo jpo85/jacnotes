@@ -17,7 +17,7 @@
   hue: "var(--c-themeHueRed)"
   subnav:
     - title: Storage
-      url: category/cpp.html
+      url: category/storage.html
       hue: "var(--c-themeHueRed)"
 
 - title: Altro
