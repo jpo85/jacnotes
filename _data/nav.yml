@@ -1,23 +1,31 @@
-- title: Programming #Menu item title.
-  url: category/programming.html #Menu item url.
-  icon: assets/img/icons/programming.svg #Menu item icon.
-  hue: "var(--c-themeHueRed)" #Menu item hue - see note [1].
-#  subnav: #Subnav. See note [2].
-#      - title: scripting #Submenu item title.
-#        url: category/cpp.html #Submenu item url.
-#        hue: "var(--c-themeHueOrange)" #Submenu item hue.
-#        subnav: #Another subnav
-#            - title: Libraries
-#              url: libs.html
-#              hue: "var(--c-themeHueBlue)"
+- title: Programming
+  url: category/programming.html
+  icon: assets/img/icons/programming.svg
+  hue: "var(--c-themeHueRed)"
+#  subnav:
+#    - title: scripting
+#      url: category/cpp.html
+#      hue: "var(--c-themeHueOrange)"
+#      subnav:
+#        - title: Libraries
+#          url: libs.html
+#          hue: "var(--c-themeHueBlue)"
+
 - title: Guide
   url: category/guide.html
   icon: assets/img/icons/guide.svg
   hue: "var(--c-themeHueRed)"
+  subnav:
+    - title: Storage
+      url: category/cpp.html
+      icon: assets/img/icons/harddisk.svg
+      hue: "var(--c-themeHueRed)"
+
 - title: Altro
   url: category/altro.html
   icon: assets/img/icons/altro.svg
   hue: "var(--c-themeHueRed)"
+
 - title: Chi Sono
   url: category/chi_sono.html
   icon: assets/img/icons/chi_sono.svg

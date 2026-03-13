@@ -15,7 +15,7 @@ Per fare il backup della san, procediamo con l'esportare la configurazione dello
 
 Per fare questo abbiamo bisogno di un server scp da dare al comando nello switch per esportare la configurazione in txt.  
 
-### Questi sono i comandi che utilizzati usando ubuntu come server scp .
+### Questi sono i comandi che utilizzeremo avendo ubuntu come server scp .
 
 installa il server open-ssh
 ```bash
@@ -27,7 +27,7 @@ sudo systemctl status ssh
 ```
 
 avremo questo risultato
-```
+```bash
 ● ssh.service - OpenBSD Secure Shell server
      Loaded: loaded (/usr/lib/systemd/system/ssh.service; enabled; preset: enabled)
      Active: active (running) since Wed 2026-03-11 17:02:35 CET; 2s ago
